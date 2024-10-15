@@ -28,6 +28,12 @@ class Item(BaseModel):
     age: int
     city: str
 
+#Home page
+@app.get("/")
+def read_root():
+    return{"Hello":"World"}
+
+
 # CREATE: Add a new item
 @app.post("/items/", response_model=Item)
 def create_item(item: Item):
